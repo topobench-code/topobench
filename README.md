@@ -5,9 +5,11 @@
 This repo provides the code to run the main TopoBench benchmark with different input formats.
 
 Dataset Links:
-[Plain](https://huggingface.co/datasets/topobench/topobench)
-[Intformat](https://huggingface.co/datasets/topobench/topobench_intformat)
-[Intformat_json](https://huggingface.co/datasets/topobench/topobench_intformat_json)
+-[Plain](https://huggingface.co/datasets/topobench/topobench)
+
+-[Intformat](https://huggingface.co/datasets/topobench/topobench_intformat)
+
+-[Intformat_json](https://huggingface.co/datasets/topobench/topobench_intformat_json)
 
 ## Setup (docker required)
 
