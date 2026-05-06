@@ -6,8 +6,8 @@ This repo provides the code to run the main TopoBench benchmark with different i
 
 Dataset Links:
 [Plain](https://huggingface.co/datasets/topobench/topobench)
-[Intformat](https://example.com](https://huggingface.co/datasets/topobench/topobench_intformat)
-[Intformat_json](https://example.com](https://huggingface.co/datasets/topobench/topobench_intformat_json)
+[Intformat](https://huggingface.co/datasets/topobench/topobench_intformat)
+[Intformat_json](https://huggingface.co/datasets/topobench/topobench_intformat_json)
 
 ## Setup (docker required)
 
