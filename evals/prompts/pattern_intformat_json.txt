@@ -1,0 +1,48 @@
+```plaintext
+Game: Pattern
+
+Solve the following Pattern puzzle. You are given a 2D ASCII board representation in JSON array format.
+
+Legend:
+The puzzle grid is encoded using integers and letters (0-9, A-Z) where each character maps to a specific symbol:
+
+- "0" = space
+- "A" = . (empty cell)
+- "B" = # (filled cell)
+- "X" = + (vertex)
+- "Y" = - (horizontal edge)
+- "Z" = | (vertical edge)
+- "1"-"9" = digits 1-9 (clues)
+
+-Digits on top and left sides of the grid (called "clues") indicating how many cells in that row or column should form a connected pattern. 
+
+
+Rules:
+Patterns are formed by placing B into cells that should be filled and A into cells that should stay empty. For example when there are two clues of "3" in a row, it means that there should be two separate groups of three connected B cells in that row. 
+Only place B and A in empty cells (zeros). Do not modify or move any of the existing X, Y, Z, or numbers. Each row and column must contain exactly the number of connected B groups as indicated by the clues. The pattern must be continuous (all B cells must be connected horizontally or vertically).
+
+Think step by step then output only the solved board in json format as shown below.
+
+Output Format:
+
+Return your final answer exactly like this:
+
+```json
+{"response": "{final board state}"}
+```
+
+Example Puzzle:
+
+Input:
+
+[["0", "0", "0", "0", "0", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"], ["0", "0", "0", "0", "0", "2", "0", "0", "3", "0", "0", "1", "0", "0", "3", "0", "0", "3", "0"], ["0", "0", "0", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X"], ["1", "0", "2", "Z", "0", "0", "Z", "0", "0", "Z", "0", "0", "Z", "0", "0", "Z", "0", "0", "Z"], ["0", "0", "0", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X"], ["0", "0", "2", "Z", "0", "0", "Z", "0", "0", "Z", "0", "0", "Z", "0", "0", "Z", "0", "0", "Z"], ["0", "0", "0", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X"], ["1", "0", "2", "Z", "0", "0", "Z", "0", "0", "Z", "0", "0", "Z", "0", "0", "Z", "0", "0", "Z"], ["0", "0", "0", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X"], ["0", "0", "2", "Z", "0", "0", "Z", "0", "0", "Z", "0", "0", "Z", "0", "0", "Z", "0", "0", "Z"], ["0", "0", "0", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X"], ["0", "0", "3", "Z", "0", "0", "Z", "0", "0", "Z", "0", "0", "Z", "0", "0", "Z", "0", "0", "Z"], ["0", "0", "0", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X"]]
+
+Solution:
+
+```json
+{"response": "
+[["0", "0", "0", "0", "0", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"], ["0", "0", "0", "0", "0", "2", "0", "0", "3", "0", "0", "1", "0", "0", "3", "0", "0", "3", "0"], ["0", "0", "0", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X"], ["1", "0", "2", "Z", "A", "A", "Z", "B", "B", "Z", "A", "A", "Z", "B", "B", "Z", "B", "B", "Z"], ["0", "0", "0", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X"], ["0", "0", "2", "Z", "A", "A", "Z", "A", "A", "Z", "A", "A", "Z", "B", "B", "Z", "B", "B", "Z"], ["0", "0", "0", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X"], ["1", "0", "2", "Z", "A", "A", "Z", "B", "B", "Z", "A", "A", "Z", "B", "B", "Z", "B", "B", "Z"], ["0", "0", "0", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X"], ["0", "0", "2", "Z", "B", "B", "Z", "B", "B", "Z", "A", "A", "Z", "A", "A", "Z", "A", "A", "Z"], ["0", "0", "0", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X"], ["0", "0", "3", "Z", "B", "B", "Z", "B", "B", "Z", "B", "B", "Z", "A", "A", "Z", "A", "A", "Z"], ["0", "0", "0", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X", "Y", "Y", "X"]]
+"}```
+
+Now solve this puzzle:
+```

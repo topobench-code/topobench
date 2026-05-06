@@ -1,0 +1,47 @@
+"""
+DECB.
+.....
+..E.B
+DC..A
+A....
+"""
+
+# ---- raw puzzle block (for reproducibility) ----
+5 5 5
+(0, 4) (4, 3)
+(4, 2) (3, 0)
+(2, 0) (1, 3)
+(0, 3) (0, 0)
+(1, 0) (2, 2)
+
+ param line: 5 5 5 0 2 1 1000000
+
+# ---- solution (appended by solve_generated.py) ----
+## Human-readable solution:
+"""
+DECBB
+DECCB
+DEECB
+DCCCA
+AAAAA
+"""
+
+## Raw solver output:
+5 5 5
+(0, 4) (1, 4) (2, 4) (3, 4) (4, 4) (4, 3)
+(4, 2) (4, 1) (4, 0) (3, 0)
+(2, 0) (2, 1) (3, 1) (3, 2) (3, 3) (2, 3) (1, 3)
+(0, 3) (0, 2) (0, 1) (0, 0)
+(1, 0) (1, 1) (1, 2) (2, 2)
+
+Touching forbidden
+Nodes 26
+Solutions 1
+
+## Solver input (raw puzzle block):
+5 5 5
+(0, 4) (4, 3)
+(4, 2) (3, 0)
+(2, 0) (1, 3)
+(0, 3) (0, 0)
+(1, 0) (2, 2)

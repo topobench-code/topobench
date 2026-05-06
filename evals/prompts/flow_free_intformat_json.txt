@@ -1,0 +1,43 @@
+Game: Flow Free
+
+Solve the following Flow Free puzzle by connecting the same letters. You are given a 2D ASCII board representation in a tokenizer optimized integer format.
+
+Legend:
+Each board cell is delimited by a comma. Each new row is on a new line.
+'2' = empty space that can be filled with letters to create paths
+'3' to '9' and 'A' to 'C' = colored dots that need to be connected
+
+Rules:
+
+1. You may only fill in empty space ('2') with colours that already exist on the board. (i.e., numbers/letters from '3' to '9' and 'A' to 'C' that are already present).
+2. You cannot modify or move any of the existing letters.
+3. Each pair of identical colours must be connected with a continuous, unbroken path of the same colour.
+4. Paths cannot cross or overlap each other.
+5. When solved, no empty spaces ('2') should remain — the board must be completely filled with colours ('3' to '9' and 'A' to 'C').
+6. A path cannot be adjacent to itself horizontally or vertically.
+
+Think step by step then output only the solved board in json format as shown below.
+
+Output Format:
+
+Return your final answer exactly like this:
+
+```json
+{"response": "{final board state}"}
+```
+
+Example Puzzle:
+
+Input:
+
+[["2", "2", "2", "2", "2", "2", "2", "2"], ["4", "2", "2", "2", "2", "2", "2", "2"], ["2", "2", "2", "2", "2", "2", "2", "2"], ["2", "2", "2", "2", "3", "2", "8", "2"], ["8", "2", "3", "2", "2", "2", "2", "2"], ["7", "2", "9", "2", "2", "6", "2", "5"], ["2", "2", "2", "9", "6", "2", "2", "2"], ["2", "2", "2", "2", "7", "4", "2", "5"]]
+
+Solution:
+
+```json
+{"response": "
+[["4", "4", "4", "4", "4", "4", "4", "4"], ["4", "8", "8", "8", "8", "8", "8", "4"], ["8", "8", "9", "9", "9", "9", "8", "4"], ["8", "9", "9", "3", "3", "9", "8", "4"], ["8", "9", "3", "3", "9", "9", "4", "4"], ["7", "9", "9", "9", "9", "6", "4", "5"], ["7", "9", "9", "9", "6", "6", "4", "5"], ["7", "7", "7", "7", "7", "4", "4", "5"]]
+"}
+```
+
+Now solve this puzzle:

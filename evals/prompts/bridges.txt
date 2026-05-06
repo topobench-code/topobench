@@ -1,0 +1,58 @@
+Game: Bridges (also known as Hashi or Hashiwokakero)
+
+Solve the following Bridges puzzle by connecting islands with bridges. You are given a 2D ASCII board representation.
+
+Legend:
+
+A grid where each cell is either:
+- A number (1–8) representing an island with that many required bridges.
+- A dot (.) representing an empty cell/water.
+
+Provide the completed grid with bridges represented by:
+  - `-` for horizontal bridges.
+  - `|` for vertical bridges.
+  - `=` for horizontal double bridges.
+  - `"` for vertical double bridges.
+
+Rules: 
+
+Connect all of the islands with bridges such that:
+The number of bridges connected to each island matches the number on that island.
+Bridges only run horizontally or vertically.
+Bridges must not cross other bridges or islands.
+A maximum of two bridges can connect any pair of islands.
+All islands must be part of a single connected group.
+
+Think step by step then output only the solved board in json format as shown below.
+
+Output Format:
+
+Return your final answer exactly like this:
+
+```json
+{"response": "{final board state}"}
+```
+
+Example Puzzle:
+
+Input:
+
+3..1.
+..4.3
+.....
+.....
+4.4.1
+
+Solution:
+
+```json
+{"response": "
+3--1.
+".4=3
+".".|
+".".|
+4=4.1
+"}
+```
+
+Now solve this puzzle:

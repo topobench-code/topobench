@@ -1,0 +1,68 @@
+```plaintext
+Game: Undead
+
+Solve the following Undead puzzle. You are given a 2D ASCII board representation in JSON array format.
+
+Legend:
+
+The puzzle grid is encoded using integers and letters (0-9, A-Z) where each character maps to a specific symbol:
+
+- "0" = space
+- "2" = . (empty square)
+- "3" = / (diagonal mirror)
+- "4" = 0 (digit)
+- "5" = 1 (digit)
+- "6" = 2 (digit)
+- "7" = 3 (digit)
+- "8" = 4 (digit)
+- "9" = 5 (digit)
+- "A" = 6 (digit)
+- "B" = 7 (digit)
+- "C" = 8 (digit)
+- "D" = 9 (digit)
+- "E" = : (colon)
+- "F" = Ghost
+- "G" = Vampire
+- "H" = Zombie
+- "I" = \ (backslash diagonal mirror)
+
+- 4-9, A-D are edge clues (digits) indicating visible monsters from that direction.
+- Fill the grid with letters: Ghost (F), Vampire (G), or Zombie (H).
+
+Rules:
+
+1. The puzzle is a grid of squares. Some squares contain diagonal mirrors (3 or I) which cannot hold monsters.
+2. All non-mirror squares must be filled with exactly one monster:
+   - Ghost (F): visible only in mirrors.
+   - Vampire (G): visible only directly.
+   - Zombie (H): visible in both direct view and mirrors.
+3. Total counts of each monster type are provided in the first line of the puzzle.
+4. Numbers around the edges of the grid indicate how many monsters are visible along that row or column from that position, counting diagonal reflections.
+5. If a reflected line of sight crosses the same monster multiple times, count each occurrence.
+6. Mirrors reflect light in both directions.
+
+Think step by step then output only the solved board in json format as shown below.
+
+Output Format:
+
+Return your final answer exactly like this:
+
+```json
+{"response": "{final board state}"}
+```
+
+Example Puzzle:
+
+Input:
+
+[["F", "E", "0", "8", "0", "G", "E", "0", "8", "0", "H", "E", "0", "9"], ["0", "0", "0", "4", "0", "6", "0", "8", "0", "7", "0", "4", "0", "0"], ["0", "4", "0", "3", "0", "2", "0", "2", "0", "3", "0", "I", "0", "4"], ["0", "6", "0", "2", "0", "2", "0", "2", "0", "I", "0", "2", "0", "6"], ["0", "6", "0", "2", "0", "I", "0", "3", "0", "3", "0", "I", "0", "6"], ["0", "6", "0", "2", "0", "I", "0", "I", "0", "3", "0", "2", "0", "6"], ["0", "7", "0", "3", "0", "2", "0", "2", "0", "2", "0", "2", "0", "6"], ["0", "0", "0", "7", "0", "4", "0", "6", "0", "4", "0", "9", "0", "0"]]
+
+Solution:
+
+```json
+{"response": "
+[["F", "E", "0", "8", "0", "G", "E", "0", "8", "0", "H", "E", "0", "9"], ["0", "0", "0", "4", "0", "6", "0", "8", "0", "7", "0", "4", "0", "0"], ["0", "4", "0", "3", "0", "F", "0", "G", "0", "3", "0", "I", "0", "4"], ["0", "6", "0", "F", "0", "H", "0", "H", "0", "I", "0", "H", "0", "6"], ["0", "6", "0", "H", "0", "I", "0", "3", "0", "3", "0", "I", "0", "6"], ["0", "6", "0", "G", "0", "I", "0", "I", "0", "3", "0", "G", "0", "6"], ["0", "7", "0", "3", "0", "F", "0", "H", "0", "F", "0", "G", "0", "6"], ["0", "0", "0", "7", "0", "4", "0", "6", "0", "4", "0", "9", "0", "0"]]
+"}```
+
+Now solve this puzzle:
+```

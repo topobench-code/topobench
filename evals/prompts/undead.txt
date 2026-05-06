@@ -1,0 +1,61 @@
+Game: Undead
+
+Solve the following Undead puzzle. You are given a 2D ASCII board representation.
+
+Legend:
+
+- '.' for empty squares.
+- '/' or '\' for diagonal mirrors that reflect monster visibility diagonally.
+- Edge clues (numbers) indicating visible monsters from that direction.
+- Fill the grid with letters: G, V, or Z.
+
+Rules:
+
+1. The puzzle is a grid of squares. Some squares contain diagonal mirrors ('/' or '\') which cannot hold monsters.
+2. All non-mirror squares must be filled with exactly one monster:
+   - Ghost (G): visible only in mirrors.
+   - Vampire (V): visible only directly.
+   - Zombie (Z): visible in both direct view and mirrors.
+3. Total counts of each monster type are provided.
+4. Numbers around the edges of the grid indicate how many monsters are visible along that row or column from that position, counting diagonal reflections.
+5. If a reflected line of sight crosses the same monster multiple times, count each occurrence.
+6. Mirrors reflect light in both directions.
+
+Think step by step then output only the solved board in json format as shown below.
+
+Output Format:
+
+Return your final answer exactly like this:
+
+```json
+{"response": "{final board state}"}
+```
+
+Example Puzzle:
+
+Input:
+
+G: 2 V: 6 Z: 0
+
+   2 0 0 0  
+ 2 . \ \ / 0
+ 3 . . . . 3
+ 0 \ \ \ \ 0
+ 1 . \ . . 2
+   1 0 0 1 
+
+Solution:
+
+```json
+{"response": "
+G: 2 V: 6 Z: 0
+
+   2 0 0 0  
+ 2 V \ \ / 0
+ 3 G V V V 3
+ 0 \ \ \ \ 0
+ 1 V \ G V 2
+   1 0 0 1 
+"}```
+
+Now solve this puzzle:

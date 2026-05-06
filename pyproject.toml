@@ -1,0 +1,25 @@
+[project]
+name = "topobench"
+version = "0.1.0"
+description = "Standalone benchmark runner and verifier for six topology puzzle families."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=0.40.0",
+    "datasets>=3.1.0",
+    "google-genai>=1.30.0",
+    "json-repair>=0.39.0",
+    "numpy>=2.0.0",
+    "openai>=1.55.0",
+    "pandas>=2.2.0",
+    "pygame>=2.1.0",
+    "python-dotenv>=1.0.1",
+    "tqdm>=4.67.0",
+]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = []

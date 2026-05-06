@@ -1,0 +1,64 @@
+Game: Pattern
+
+Solve the following Pattern puzzle. You are given a 2D ASCII board representation. 
+
+Legend:
+-"+" for vertices
+-"-" for horizontal edges
+-"|" for vertical edges
+-Spaces for empty cells
+-Digits on top and left sides of the grid (called "clues") indicating how many cells in that row or column should form a connected pattern. 
+
+
+
+Rules:
+Patterns are formed by placing "##" into cells that should be filled and ".." into cells that should stay empty. For example when there are two clues of "3" in a row, it means that there should be two separate groups of three connected ## cells in that row. 
+Only place ## and .. in empty cells (spaces). Do not modify or move any of the existing +, -, |, or numbers. Each row and column must contain exactly the number of connected ## groups as indicated by the clues. The pattern must be continuous (all ## cells must be connected horizontally or vertically).
+
+Think step by step then output only the solved board in json format as shown below.
+
+Output Format:
+
+Return your final answer exactly like this:
+
+```json
+{"response": "{final board state}"}
+```
+
+Example Puzzle:
+
+Input:
+
+       2  1  4  2  4 
+     +--+--+--+--+--+
+    3|  |  |  |  |  |
+     +--+--+--+--+--+
+    3|  |  |  |  |  |
+     +--+--+--+--+--+
+  1 1|  |  |  |  |  |
+     +--+--+--+--+--+
+1 1 1|  |  |  |  |  |
+     +--+--+--+--+--+
+    2|  |  |  |  |  |
+     +--+--+--+--+--+
+
+Solution:
+
+```json
+{"response": "
+       2  1  4  2  4 
+     +--+--+--+--+--+
+    3|..|..|##|##|##|
+     +--+--+--+--+--+
+    3|..|..|##|##|##|
+     +--+--+--+--+--+
+  1 1|..|..|##|..|##|
+     +--+--+--+--+--+
+1 1 1|##|..|##|..|##|
+     +--+--+--+--+--+
+    2|##|##|..|..|..|
+     +--+--+--+--+--+
+"}```
+
+Now solve this puzzle:
+

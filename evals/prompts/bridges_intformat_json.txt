@@ -1,0 +1,59 @@
+```plaintext
+Game: Bridges (also known as Hashi or Hashiwokakero)
+
+Solve the following Bridges puzzle by connecting islands with bridges. You are given a 2D ASCII board representation in JSON array format.
+
+Legend:
+
+The puzzle grid is encoded using integers and letters (0-9, A-Z) where each character maps to a specific symbol:
+
+- "0" = space
+- "2" = double vertical bridge
+- "3" = single horizontal bridge
+- "4" = water/empty
+- "5" = 1 (island with value 1)
+- "6" = 2 (island with value 2)
+- "7" = 3 (island with value 3)
+- "8" = 4 (island with value 4)
+- "9" = 5 (island with value 5)
+- "A" = 6 (island with value 6)
+- "B" = 7 (island with value 7)
+- "C" = 8 (island with value 8)
+- "D" = double horizontal bridge
+- "E" = single vertical bridge
+
+Rules: 
+
+Connect all of the islands with bridges such that:
+The number of bridges connected to each island matches the number on that island.
+Bridges only run horizontally or vertically.
+Bridges must not cross other bridges or islands.
+A maximum of two bridges can connect any pair of islands.
+All islands must be part of a single connected group.
+
+Think step by step then output only the solved board in json format as shown below.
+
+Output Format:
+
+Return your final answer exactly like this:
+
+```json
+{"response": "{final board state}"}
+```
+
+Example Puzzle:
+
+Input:
+
+[["7", "4", "4", "4", "7"], ["4", "4", "4", "4", "4"], ["4", "5", "4", "4", "7"], ["4", "4", "4", "4", "4"], ["8", "4", "8", "4", "6"]]
+
+Solution:
+
+```json
+{"response": "
+[["7", "3", "3", "3", "7"], ["2", "4", "4", "4", "2"], ["2", "5", "3", "3", "7"], ["2", "4", "4", "4", "4"], ["8", "D", "8", "D", "6"]]
+"}
+```
+
+Now solve this puzzle:
+```

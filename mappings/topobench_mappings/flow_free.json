@@ -1,0 +1,20 @@
+{
+  "dataset": "topobench/mmcot_test_set",
+  "puzzle_type": "flow_free",
+  "char_map": {
+    " ": "0",
+    "\n": "1",
+    ".": "2",
+    "A": "3",
+    "B": "4",
+    "C": "5",
+    "D": "6",
+    "E": "7",
+    "F": "8",
+    "G": "9",
+    "H": "A",
+    "I": "B",
+    "J": "C"
+  },
+  "num_characters": 13
+}

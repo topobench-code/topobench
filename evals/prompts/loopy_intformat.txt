@@ -1,0 +1,78 @@
+Game: Loopy (Slitherlink)
+
+Solve the following Loopy (Slitherlink) puzzle given as a 2D ASCII grid.
+
+Legend:
+
+The puzzle grid is encoded using integers 0-8 where each character maps to a specific symbol:
+
+- 0 = space
+- 2 = horizontal edge
+- 3 = 0 (digit)
+- 4 = 1 (digit)
+- 5 = 2 (digit)
+- 6 = 3 (digit)
+- 7 = x (edge not in loop)
+- 8 = vertical edge
+
+You are given numbers arranged in a grid that represent the number of loop edges that should be adjacent to their cell. Use the following symbols to solve the puzzle:
+7 for no edge in that position
+2 and 8 for horizontal and vertical edges
+0 for empty cells where no number is given
+
+Rules:
+
+Draw a single continuous loop using some subset of the possible edges.
+The loop must:
+Pass along 2 and 8 positions only.
+Satisfy all cell clues.
+Have no branches (each vertex used by the loop has degree 2).
+In the solution:
+Use 2 and 8 to show edges that are part of the loop and 7 to show edges that are not part of the loop.
+The structure of the puzzle is as follows: empty row, row with clues, empty row, row with clues, ... ending with an empty row.
+The available positions for horizontal edges (2) are in the empty rows in every second column (the columns where clues can appear).
+The available positions for vertical edges (8) are in the rows with clues in the first, third, fifth, etc. columns (the columns where no clues appear).
+In each of the possible positions for edges, you must determine whether to place an edge (2 or 8) or to mark it as not part of the loop (7).
+
+Think step by step then output only the solved board in json format as shown below.
+
+Output Format
+Return your final answer exactly like this:
+
+```json
+{"response": "{final board state}"}
+```
+
+Example Puzzle:
+
+Input:
+
+0,0,0,0,0,0,0,0,0,0,0
+0,5,0,4,0,0,0,6,0,0,0
+0,0,0,0,0,0,0,0,0,0,0
+0,5,0,0,0,4,0,0,0,5,0
+0,0,0,0,0,0,0,0,0,0,0
+0,6,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0
+0,0,0,3,0,0,0,4,0,6,0
+0,0,0,0,0,0,0,0,0,0,0
+0,0,0,6,0,0,0,0,0,0,0
+
+Solution:
+
+```json
+{"response": "
+0,2,0,2,0,2,0,7,0,2,0
+8,5,7,4,7,0,8,6,8,0,8
+0,7,0,7,0,7,0,2,0,7,0
+8,5,7,0,7,4,7,0,7,5,8
+0,2,0,7,0,2,0,2,0,2,0
+7,6,8,0,8,0,7,0,7,0,7
+0,2,0,7,0,2,0,2,0,2,0
+8,0,7,3,7,0,7,4,7,6,8
+0,2,0,7,0,2,0,7,0,2,0
+7,0,8,6,8,0,8,0,8,0,7
+0,7,0,2,0,7,0,2,0,7,0
+"}```
+
+Now solve this puzzle:

@@ -1,0 +1,53 @@
+Game: Flow Free
+
+Solve the following Flow Free puzzle by connecting the same letters. You are given a 2D ASCII board representation.
+
+Legend:
+
+Letters (A-Z) = colored dots that need to be connected
+. = empty space that can be filled with letters to create paths
+
+Rules:
+
+1. You may only fill in dots (.) with letters that already exist on the board.
+2. You cannot modify or move any of the existing letters.
+3. Each pair of identical letters must be connected with a continuous, unbroken path of the same letter.
+4. Paths cannot cross or overlap each other.
+5. When solved, no dots should remain — the board must be completely filled with letters.
+6. A path cannot be adjacent to itself horizontally or vertically.
+
+Think step by step then output only the solved board in json format as shown below.
+
+Output Format:
+
+Return your final answer exactly like this:
+
+```json
+{"response": "{final board state}"}
+```
+
+Example Puzzle:
+
+Input:
+
+BA...A
+..E...
+..D.F.
+..F..D
+..C.CE
+B.....
+
+Solution:
+
+```json
+{"response": "
+BAAAAA
+BEEDDD
+BEDDFD
+BEFFFD
+BECCCE
+BEEEEE
+"}
+```
+
+Now solve this puzzle:

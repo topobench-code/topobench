@@ -1,0 +1,69 @@
+Game: Galaxies (also known as Spiral Galaxies / Tentai Show) 
+
+Solve the following Galaxies puzzle by partitioning the grid into rotationally symmetric regions. You are given a 2D ASCII board representation.
+
+Legend:
+
+The puzzle grid is encoded using integers and letters (0-9, A-Z) where each character maps to a specific symbol:
+
+Initial grid: 
+- 0 = space (empty square or non-existent grid line)
+- 2 = + (grid vertex)
+- 3 = - (horizontal grid line)
+- 4 = o (dot)
+- 5 = | (vertical grid line)
+
+Grid orientation: rows are written top-to-bottom; columns left-to-right. Each row is a string of characters; rows are separated by newline characters (\n).
+
+Rules: 
+
+Partition the rectangular grid into connected regions of squares so that:
+Every region is 180° rotationally symmetric.
+Each region contains exactly one dot, and that dot is the region’s centre of symmetry. The dot may be on a square, on an edge between two squares, or at a vertex where four squares meet.
+Regions are formed by drawing edges on grid lines; the puzzle is complete when the drawn edges separate every pair of squares that belong to different regions.
+Do not modify or move any of the existing dots or grid lines and vertexes. Only add new hoizontal and veritcal edges to the grid lines.
+
+Think step by step then output only the solved board in json format as shown below.
+
+Output Format
+Return your final answer exactly like this:
+
+```json
+{"response": "{final board state}"}
+```
+
+Example Puzzle:
+
+Input:
+
+2,3,2,3,2,3,2,3,2,3,2
+5,0,0,0,0,0,0,0,4,0,5
+2,0,2,4,2,0,2,0,2,0,2
+5,0,0,0,0,0,0,0,0,4,5
+2,0,2,0,2,0,2,0,2,0,2
+5,0,0,0,0,0,0,4,0,0,5
+2,0,2,0,2,0,2,0,2,0,2
+5,0,0,4,0,0,0,0,0,0,5
+2,0,2,0,2,0,2,0,2,4,2
+5,4,0,0,0,0,0,4,0,0,5
+2,3,2,3,2,3,2,3,2,3,2
+
+Solution:
+
+```json
+{"response": "
+2,3,2,3,2,3,2,3,2,3,2
+5,0,0,0,0,0,5,0,4,0,5
+2,0,2,4,2,0,2,3,2,3,2
+5,0,0,0,0,0,5,0,5,4,5
+2,3,2,3,2,3,2,0,2,3,2
+5,0,0,0,5,0,0,4,0,0,5
+2,0,2,0,2,3,2,0,2,3,2
+5,0,0,4,0,0,5,0,5,0,5
+2,3,2,0,2,0,2,3,2,4,2
+5,4,5,0,0,0,5,4,5,0,5
+2,3,2,3,2,3,2,3,2,3,2
+"}
+```
+
+Now solve this puzzle:
