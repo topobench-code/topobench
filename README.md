@@ -17,15 +17,28 @@ Dataset Links:
 Build the container:
 
 ```bash
-docker build -t topobench -f docker/Dockerfile .
+docker build -t topobench -f docker/Dockerfile . \
+  --build-arg DEBIAN_MIRROR=https://ftp.us.debian.org/debian \
+  --build-arg DEBIAN_SECURITY_MIRROR=https://security.debian.org/debian-security
 ```
+
+Troubleshooting Docker builds:
+
+- If the build fails while fetching Debian packages, you might want to change the mirrors
 
 Run it:
 
 ```bash
 docker run --rm -it \
   -e OPENROUTER_KEY=your_key_here \
-  topobench
+  topobench \
+  python evals/src/main.py run-and-verify \
+  --provider openrouter \
+  --model inception/mercury-2 \
+  --variant intformat_json \
+  --difficulty easy \
+  --puzzle bridges \
+  --limit 1
 ```
 
 Options for keys (only set the keys you need for the provider you plan to use):
@@ -35,8 +48,6 @@ Options for keys (only set the keys you need for the provider you plan to use):
 - `DEEPSEEK_API_KEY`
 - `ANTHROPIC_API_KEY`
 - `GOOGLE_API_KEY`
-
-## Run Benchmarks
 
 Run all six puzzles on the plain release:
 
@@ -49,7 +60,7 @@ python evals/src/main.py run \
   --limit 50
 ```
 
-Run only bridges and immediately verify in one command:
+Run only bridges on intformat_json and immediately verify in one command:
 
 ```bash
 python evals/src/main.py run-and-verify \
